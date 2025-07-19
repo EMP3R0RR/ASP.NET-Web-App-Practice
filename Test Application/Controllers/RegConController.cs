@@ -43,7 +43,11 @@ namespace Test_Application.Controllers
                 //TempData["lname"] = reg.lname;
 
                 var regMod = new RegMod();
-                regMod.fname = 
+                regMod.fname = reg.fname;
+                regMod.lname = reg.lname;
+
+                TempData["fname"] = regMod.fname;
+                TempData["lname"] = regMod.lname;
 
                 return RedirectToAction("Success"); //redirect to success page with reg object
             }
