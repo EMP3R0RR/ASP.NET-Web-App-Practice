@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Test_Application.Models.UserModel
+
+
+<h2>Create</h2>
+
+<h2>Enter User Information</h2>
+
+@using (Html.BeginForm("Create", "User", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Age)
+        @Html.TextBoxFor(m => m.Age)
+    </div>
+
+    <br />
+    <input type="submit" value="Submit" />
+}
+

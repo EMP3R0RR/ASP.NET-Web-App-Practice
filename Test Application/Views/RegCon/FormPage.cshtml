@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "FormPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Test_Application.Models.RegMod
+
+<h2>FormPage</h2>
+
+<form method="post" action="/RegCon/FormPageLoad">
+    <label> First Name </label>
+    <input type="text" />
+    <label> Last Name </label>
+    <input type="text" />
+    <input type="submit" />
+</form>
+
+
+
