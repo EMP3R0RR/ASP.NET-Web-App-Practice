@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Test_Application.Models.UserModel 
+
+<h2>Profile</h2>
+<br />
+@*Model.Attribute name is the way we collect data from the UserModel. Model key word is a must*@
+@*@model appname.Models.modelname is how we connect the view with inteded model to transfer data*@
+<p><strong> Hello !! </strong> @Model.Name</p>
+
+<p><strong>Your Name:</strong> @Model.Name</p>
+<p><strong>Your Email:</strong> @Model.Email</p>
+<p><strong>Your Password:</strong> @Model.Password</p> 
+    
+    

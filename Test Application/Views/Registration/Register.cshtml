@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+
+<form action="/Registration/RegisterForm" method="post">
+
+    <label>Name:</label>
+    <input type="text" name="name" />
+    <br />
+
+    <label>Email:</label>
+    <input type="email" name="email" />
+    <br />
+
+    <label>Password:</label>
+    <input type="password" name="password" />
+    <br />
+
+    <input type="submit" value="Submit" />
+
+
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}
+
