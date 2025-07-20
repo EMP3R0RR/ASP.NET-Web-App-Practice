@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FormValidationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegConController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FormValidation.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegMod.cs" />
     <Compile Include="Models\RolesModel.cs" />
@@ -194,6 +196,8 @@
     <Content Include="Views\Student\Create.cshtml" />
     <Content Include="Views\Registration\Register.cshtml" />
     <Content Include="Views\Registration\Profile.cshtml" />
+    <Content Include="Views\FormValidation\Form.cshtml" />
+    <Content Include="Views\FormValidation\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

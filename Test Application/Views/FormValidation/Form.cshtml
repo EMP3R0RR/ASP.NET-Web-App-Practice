@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Form</h2>
+
+<form class="form-control" action="/FormValidation/Form" method="post">
+
+    <lable>Name</lable>
+    <input type="text" name="Name" value="@Model.Name" />
+    <span class="text-danger">@Html.ValidationMessage("Name")</span>
+    <br />
+    <lable>UserName</lable>
+    <input type="text" name="UName" value="@Model.UName" />
+    <span class="text-danger">@Html.ValidationMessage("UName")</span>
+    <br />
+    <lable>ID</lable>
+    <input type="text" name="ID" value="@Model.ID" />
+    <span class="text-danger">@Html.ValidationMessage("ID")</span>
+    <br>
+    <lable>Email</lable>
+    <input type="email" name="Email" value="@Model.Email" />
+    <span class="text-danger">@Html.ValidationMessage("Email")</span>
+    <br>
+    <lable>DOB</lable>
+    <input type="datetime" name="DOB" value="@Model.DOB" />
+    <span class="text-danger">@Html.ValidationMessage("DOB")</span>
+    <br />
+
+    <input type="submit" class="btn btn-primary" placeholder="Done"/>
+
+</form>
+

@@ -20,7 +20,7 @@ namespace Test_Application.Controllers
         // POST: Handle the form submission manually
         [HttpPost]
         public ActionResult Register(FormCollection form) //method overloading Register method to handle form submission with FormCollection
-                                                          // which is a class that takes raw form inputs like $_POST in PHP. form is an instance of the class.
+                                                          // which is a class that takes raw form inputs like $_POST/Request in PHP. form is an instance of the class.
         {
             // Getting form data and storing them in variables
             string name = Request.Form["name"];
@@ -48,16 +48,23 @@ namespace Test_Application.Controllers
             return RedirectToAction("Profile");
         }
 
+        // Vriable mapping to handle form submission
+        //public ActionResult Create(string Name, string Id, string Email) {
+        //    ViewBag.Name = Name;
+        //    ViewBag.Id = Id;
+        //    ViewBag.Email = Email;
+        //    return View();
+
         // GET: Show the profile with data
         public ActionResult Profile()
         {
-            UserModel user = TempData["User"] as UserModel;
-            if (user == null)
+            UserModel user = TempData["User"] as UserModel; //Usermodel user gets the values from Tempdata which is a UserModel data type
+            if (user == null) //if there is no user data then redirect to the Register action
             {
                 return RedirectToAction("Register");
             }
 
-            return View(user);
+            return View(user); //otherwise return the user object to the view of Profile with user data.
         }
     }
 }

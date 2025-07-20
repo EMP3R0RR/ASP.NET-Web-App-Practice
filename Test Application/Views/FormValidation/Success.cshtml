@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Success";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Test_Application.Models.FormValidation
+
+<h2>Success</h2>
+
+@if (Model != null)
+{
+    <h4>@Model.Name</h4>
+    <h4>@Model.ID</h4>
+    <h4>@Model.Email</h4>
+    <h4>@Model.UName</h4>
+    <h4>@Model.DOB</h4>
+}
+
