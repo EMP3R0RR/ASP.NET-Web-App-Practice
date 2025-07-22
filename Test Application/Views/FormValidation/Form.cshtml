@@ -2,9 +2,15 @@
 @{
     ViewBag.Title = "Form";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //the given value feild hold the values given by the users even if the form reloads with errors.
+    // name attribute matches the data with model property names. they are same for model binding technique
+    //
 }
 
 <h2>Form</h2>
+
+@Html.ValidationSummary()
 
 <form class="form-control" action="/FormValidation/Form" method="post">
 
@@ -25,11 +31,11 @@
     <span class="text-danger">@Html.ValidationMessage("Email")</span>
     <br>
     <lable>DOB</lable>
-    <input type="datetime" name="DOB" value="@Model.DOB" />
+    <input type="date" name="DOB" value="2025-01-01" /> @*yyyy-MM-dd*@
     <span class="text-danger">@Html.ValidationMessage("DOB")</span>
     <br />
 
-    <input type="submit" class="btn btn-primary" placeholder="Done"/>
+    <input type="submit" class="btn btn-primary" placeholder="Done" />
 
 </form>
 

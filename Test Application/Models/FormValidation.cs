@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Test_Application.CustomValidations; // you must need to call the custom validation class namespace in order to use it in the model
 
 namespace Test_Application.Models
 {
+
+    [EmailEqualsID(ErrorMessage = "Email does not match the ID")]
     public class FormValidation
     {
         [Required]
@@ -24,6 +27,7 @@ namespace Test_Application.Models
 
         [Required]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
+        
         public string Email { get; set; }
         
         [Required]
