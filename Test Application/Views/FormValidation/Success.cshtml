@@ -14,6 +14,11 @@
     <h4>@Model.ID</h4>
     <h4>@Model.Email</h4>
     <h4>@Model.UName</h4>
-    <h4>@Model.DOB</h4>
+    <h4>@Model.DOB.ToString("yyyy-MM-dd")</h4>
+ //converts the value into that format
+    <h4>@Model.Profession</h4>
+    <h4>@string.Join(", ", Model.Hobbies)</h4>
+    <h4>@Model.Gender</h4>
+    
 }
 

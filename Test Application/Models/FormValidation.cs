@@ -8,7 +8,7 @@ using Test_Application.CustomValidations; // you must need to call the custom va
 namespace Test_Application.Models
 {
 
-    [EmailEqualsID(ErrorMessage = "Email does not match the ID")]
+    [EmailEqualsID(ErrorMessage = "Email must match the ID and be in the format ID@student.aiub.edu")]
     public class FormValidation
     {
         [Required]
@@ -29,9 +29,15 @@ namespace Test_Application.Models
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         
         public string Email { get; set; }
-        
-        [Required]
 
+        [Required]
+        public string Gender { get; set; }
+        [Required]
+        public string Profession { get; set; }
+        [Required]
+        public string[] Hobbies { get; set; }
+
+        [Required]
         public DateTime DOB { get; set; }
     }
 }
