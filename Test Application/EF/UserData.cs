@@ -12,10 +12,17 @@ namespace Test_Application.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class Table_1
+    public partial class UserData
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public int studentid { get; set; }
+        public string Name { get; set; }
+        public string UName { get; set; }
+        public byte[] StID { get; set; }
+        public string Email { get; set; }
+        public string Gender { get; set; }
+        public string Profession { get; set; }
+        public string Hobbies { get; set; }
+        public System.DateTime DOB { get; set; }
+        public string Race { get; set; }
     }
 }

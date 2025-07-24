@@ -136,23 +136,26 @@
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="CustomValidations\EmailEqualsID.cs" />
-    <Compile Include="EF\Model1.Context.cs">
+    <Compile Include="EF\DName.cs">
+      <DependentUpon>User.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\User.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>User.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\Model1.cs">
+    <Compile Include="EF\User.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>User.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\Model1.Designer.cs">
+    <Compile Include="EF\User.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>User.edmx</DependentUpon>
     </Compile>
-    <Compile Include="EF\Table_1.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="EF\UserData.cs">
+      <DependentUpon>User.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,15 +185,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="EF\Model1.Context.tt">
+    <Content Include="EF\User.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>User.edmx</DependentUpon>
+      <LastGenOutput>User.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="EF\Model1.tt">
+    <Content Include="EF\User.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>User.edmx</DependentUpon>
+      <LastGenOutput>User.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -201,12 +204,12 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="EF\Model1.edmx">
+    <EntityDeploy Include="EF\User.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="EF\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="EF\User.edmx.diagram">
+      <DependentUpon>User.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
