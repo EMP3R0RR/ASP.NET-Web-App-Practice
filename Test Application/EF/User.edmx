@@ -14,6 +14,16 @@
           <Property Name="bname" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ename" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Mydata">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Lname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Myname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="yourname" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="UserData">
           <Key>
             <PropertyRef Name="id" />
@@ -31,6 +41,7 @@
         </EntityType>
         <EntityContainer Name="ApplicationDBModelStoreContainer">
           <EntitySet Name="DName" EntityType="Self.DName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mydata" EntityType="Self.Mydata" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserData" EntityType="Self.UserData" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -55,6 +66,7 @@
         <EntityContainer Name="ApplicationDBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UserDatas" EntityType="Self.UserData" />
           <EntitySet Name="DNames" EntityType="ApplicationDBModel.DName" />
+          <EntitySet Name="Mydatas" EntityType="ApplicationDBModel.Mydata" />
         </EntityContainer>
         <EntityType Name="DName">
           <Key>
@@ -64,6 +76,16 @@
           <Property Name="pname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="bname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Mydata">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Lname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Myname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yourname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -93,6 +115,17 @@
                 <ScalarProperty Name="ename" ColumnName="ename" />
                 <ScalarProperty Name="bname" ColumnName="bname" />
                 <ScalarProperty Name="pname" ColumnName="pname" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mydatas">
+            <EntityTypeMapping TypeName="ApplicationDBModel.Mydata">
+              <MappingFragment StoreEntitySet="Mydata">
+                <ScalarProperty Name="yourname" ColumnName="yourname" />
+                <ScalarProperty Name="Myname" ColumnName="Myname" />
+                <ScalarProperty Name="Fname" ColumnName="Fname" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

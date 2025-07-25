@@ -139,6 +139,9 @@
     <Compile Include="EF\DName.cs">
       <DependentUpon>User.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\Mydata.cs">
+      <DependentUpon>User.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\User.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

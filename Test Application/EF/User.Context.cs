@@ -27,5 +27,6 @@ namespace Test_Application.EF
     
         public virtual DbSet<UserData> UserDatas { get; set; }
         public virtual DbSet<DName> DNames { get; set; }
+        public virtual DbSet<Mydata> Mydatas { get; set; }
     }
 }
