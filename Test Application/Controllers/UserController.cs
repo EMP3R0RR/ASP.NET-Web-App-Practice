@@ -13,31 +13,31 @@ namespace Test_Application.Controllers
     {
         // GET: User
 
-        ApplicationDBEntities1 db = new ApplicationDBEntities1();
-        public ActionResult Create()
+        //ApplicationDBEntities1 db = new ApplicationDBEntities1();
+        //public ActionResult Create()
 
-        {
+        //{
             
-            return View(new ApplicationDBEntities1());
-        }
+        //    return View(new ApplicationDBEntities1());
+        //}
 
-        // POST: User/Create
-        [HttpPost]
-        public ActionResult Create( UserData data)
-        {
-            db.UserDatas.Add(data);
-            db.SaveChanges();
+        //// POST: User/Create
+        //[HttpPost]
+        //public ActionResult Create( UserData data)
+        //{
+        //    db.UserDatas.Add(data);
+        //    db.SaveChanges();
             
-            return RedirectToAction("Details");
-        }
+        //    return RedirectToAction("Details");
+        //}
 
-        // GET: User/Details
-        public ActionResult Details()
-        {
-            var data = db.UserDatas.ToList();
-            return View(data);
+        //// GET: User/Details
+        //public ActionResult Details()
+        //{
+        //    var data = db.UserDatas.ToList();
+        //    return View(data);
 
-        }
+        //}
         //public ActionResult Details(int id)
         //{
         //    var data = db.UserDatas.Find(id);

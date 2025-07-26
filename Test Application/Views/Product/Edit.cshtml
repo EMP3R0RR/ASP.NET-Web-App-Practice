@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+<form method="post">
+
+    <input type="text" class="form-control" placeholder="Name" name="Name" value="@Model.Name" />
+    <input type="text" class="form-control" placeholder="Price" name="Price" value="@Model.Price" />
+    <input type="number" class="form-control" placeholder="Quantity" name="Qty" value="@Model.Qty" />
+    <input type="text" class="form-control" placeholder="Description" name="Description" value="@Model.Description" />
+    <input type="submit" class="btn btn-danger" value="Create" />
+
+</form>
+

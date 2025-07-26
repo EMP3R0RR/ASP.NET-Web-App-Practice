@@ -13,10 +13,10 @@ namespace Test_Application.EF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ApplicationDBEntities1 : DbContext
+    public partial class TestDB2Entities : DbContext
     {
-        public ApplicationDBEntities1()
-            : base("name=ApplicationDBEntities1")
+        public TestDB2Entities()
+            : base("name=TestDB2Entities")
         {
         }
     
@@ -25,8 +25,7 @@ namespace Test_Application.EF
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<UserData> UserDatas { get; set; }
-        public virtual DbSet<DName> DNames { get; set; }
-        public virtual DbSet<Mydata> Mydatas { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
     }
 }

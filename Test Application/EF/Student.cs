@@ -12,12 +12,11 @@ namespace Test_Application.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class Mydata
+    public partial class Student
     {
-        public int id { get; set; }
-        public string Lname { get; set; }
-        public string Fname { get; set; }
-        public string Myname { get; set; }
-        public string yourname { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public double Cgpa { get; set; }
+        public System.DateTime Dob { get; set; }
     }
 }

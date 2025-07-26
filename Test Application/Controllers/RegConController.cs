@@ -25,7 +25,7 @@ namespace Test_Application.Controllers
         //        return RedirectToAction("Success", reg); //redirect to success page with reg object
         //    }
         //    return View(reg);
-            
+
         //}
 
         //public ActionResult Success(RegMod reg) //success page takes the object reg and shows the view. 

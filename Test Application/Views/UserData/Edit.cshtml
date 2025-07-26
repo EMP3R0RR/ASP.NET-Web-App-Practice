@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h2>Edit</h2>
+
+<form method="post">
+    <input type="text" class="form-control" value="@Model.Name" placeholder="Name" name="Name" />
+    <input type="text" class="form-control" value="@Model.Email" placeholder="Email" name="Email" />
+    <input type="date" class="form-control" value="@Model.DOB.ToString("yyyy-MM-dd")" placeholder="Dob" name="DOB" />
+    <input type="text" class="form-control" value="@Model.UName" placeholder="Uname" name="UName" />
+    <input type="text" class="form-control" value="@Model.StID" placeholder="StID" name="StID" />
+    <input type="text" class="form-control" value="@Model.Profession" placeholder="Profession" name="Profession" />
+    <input type="text" class="form-control" value="@Model.Hobbies" placeholder="Hobbies" name="Hobbies" />
+    <input type="text" class="form-control" value="@Model.Gender" placeholder="Gender" name="Gender" />
+
+    <input type="submit" class="btn btn-danger" value="Create" />
+
+</form>

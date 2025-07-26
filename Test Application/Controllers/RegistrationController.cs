@@ -56,7 +56,7 @@ namespace Test_Application.Controllers
         //    return View();
 
         // GET: Show the profile with data
-        public ActionResult Profile()
+        public new ActionResult Profile()
         {
             UserModel user = TempData["User"] as UserModel; //Usermodel user gets the values from Tempdata which is a UserModel data type
             if (user == null) //if there is no user data then redirect to the Register action

@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h2>Create</h2>
+<form method="post">
+
+    <lable>Name</lable>
+    <input type="text" name="Name" value="@Model.Name" />
+    
+    <br />
+    <lable>UserName</lable>
+    <input type="text" name="UName" value="@Model.UName" />
+    
+    <br />
+    <lable>ID</lable>
+    <input type="text" name="StID" value="@Model.StID" />
+    
+    <br>
+    <lable>Email</lable>
+    <input type="email" name="Email" value="@Model.Email" />
+    
+    <br>
+    <lable>DOB</lable>
+    <input type="date" name="DOB" value="@Model.DOB.ToString("yyyy-MM-dd")" /> @*yyyy-MM-dd*@
+  
+    <br />
+
+    Gender:
+    <input type="radio"  name="Gender" value="Male" /> Male
+    <input type="radio"  name="Gender" value="Female" /> Female
+    <br />
+    
+    <br />
+
+    Profession:
+    <select name="Profession">
+        <option selected disabled>---Select---</option>
+        <option value="Student">Student</option>
+        <option value="Business">Business</option>
+        <option value="Job">Job</option>
+    </select>
+    <br />
+    
+    <br />
+    Hobbies:
+    <input type="checkbox" name="Hobbies[]" value="Sports" />Sports
+    <input type="checkbox"  name="Hobbies[]" value="Travelling" />Travelling
+    <input type="checkbox"  name="Hobbies[]" value="Games" />Games
+    <input type="checkbox"  name="Hobbies[]" value="Gardenning" />Gardenning
+    <br />
+    
+
+    <input type="submit" class="btn btn-primary" placeholder="Done" />
+
+</form>
+
