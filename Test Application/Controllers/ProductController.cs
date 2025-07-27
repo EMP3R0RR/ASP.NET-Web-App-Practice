@@ -61,21 +61,22 @@ namespace Test_Application.Controllers
 
         public ActionResult Delete(int? id) 
         {
-            if (id != null) {
-
+            if (id != null)
+            {
                 var data = db.Products.Find(id);
-                return View(data);
+                if (data != null)
+                    return View(data);
             }
 
-            return View();
-            
+            return RedirectToAction("Index");
+
         }
 
 
         [HttpPost]
-        public ActionResult Delete (Product p)
+        public ActionResult DeleteConfirmed(int id)
         {
-            var data = db.Products.Find(p.Id);
+            var data = db.Products.Find(id);
             if (data != null)
             {
                 db.Products.Remove(data);
