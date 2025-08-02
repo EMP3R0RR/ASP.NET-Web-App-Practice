@@ -25,7 +25,8 @@ namespace Test_Application.EF
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
     }
 }
