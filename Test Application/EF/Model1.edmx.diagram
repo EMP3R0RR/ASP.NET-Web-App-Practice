@@ -9,6 +9,13 @@
         <EntityTypeShape EntityType="TestDB2Model.Product" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TestDB2Model.Student" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="TestDB2Model.FK_Student_Department" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TestDB2Model.Member" Width="1.5" PointX="3.375" PointY="8.125" />
+        <EntityTypeShape EntityType="TestDB2Model.Project" Width="1.5" PointX="5.625" PointY="5" />
+        <EntityTypeShape EntityType="TestDB2Model.ProjectStatu" Width="1.5" PointX="3.375" PointY="10.875" />
+        <EntityTypeShape EntityType="TestDB2Model.Supervisor" Width="1.5" PointX="3.375" PointY="5.5" />
+        <AssociationConnector Association="TestDB2Model.FK_Project_ProjectStatus" />
+        <AssociationConnector Association="TestDB2Model.FK_Project_Supervisor" />
+        <AssociationConnector Association="TestDB2Model.ProjectMember" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
