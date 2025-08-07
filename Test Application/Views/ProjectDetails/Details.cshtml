@@ -1,0 +1,29 @@
+﻿@model Test_Application.DTO.ProjectDetailsDTO
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Project Details</h2>
+
+<p><strong>Project ID:</strong> @Model.ProjectID</p>
+<p><strong>Title:</strong> @Model.Title</p>
+@*<p><strong>Status:</strong> @Model.Status.StatusName.ToString()</p> // The problem here is the null returning of the statusName*@ 
+<p><strong>Supervisor:</strong> @Model.Supervisor.SName</p> 
+
+<h3>Team Members</h3>
+<table class="table table-condensed">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    @foreach (var member in Model.Members)
+    {
+        <tr>
+            <td>@member.MemberID</td>
+            <td>@member.MName</td>
+        </tr>
+    }
+</table>
+

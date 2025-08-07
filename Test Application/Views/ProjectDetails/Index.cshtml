@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Projects</h2>
+
+<table class="table table-bordered">
+<tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Supervisor</th>
+</tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.ProjectID</td>
+        <td>@item.Title</td>
+        <td>@item.SupervisorID</td>
+        <td>
+
+            <a href="/ProjectDetails/details/@item.ProjectID">Details </a>  /
+           / <a href="/ProjectDetails/join/@item.ProjectID" class="text-danger">Join Project</a>
+
+        </td>
+    </tr>
+}
+</table>
+

@@ -201,6 +201,7 @@
     <Compile Include="Controllers\FormValidationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProjectDetailsController.cs" />
     <Compile Include="Controllers\RegConController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -353,6 +354,8 @@
     <Content Include="Views\Department\Index.cshtml" />
     <Content Include="Views\Department\Edit.cshtml" />
     <Content Include="Views\Department\Details.cshtml" />
+    <Content Include="Views\ProjectDetails\Index.cshtml" />
+    <Content Include="Views\ProjectDetails\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
