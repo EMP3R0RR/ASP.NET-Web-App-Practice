@@ -5,16 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="664943f127cb4ff8a870c6915e8ed87c" Name="Diagram1">
-        <EntityTypeShape EntityType="TestDB2Model.Department" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDB2Model.Department" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TestDB2Model.Product" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TestDB2Model.Student" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDB2Model.Student" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="TestDB2Model.FK_Student_Department" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="TestDB2Model.Member" Width="1.5" PointX="7.875" PointY="7.25" />
-        <EntityTypeShape EntityType="TestDB2Model.Project" Width="1.5" PointX="5.625" PointY="5" />
-        <EntityTypeShape EntityType="TestDB2Model.ProjectStatu" Width="1.5" PointX="7.875" PointY="5.25" />
-        <EntityTypeShape EntityType="TestDB2Model.Supervisor" Width="1.5" PointX="3.375" PointY="5.5" />
+        <EntityTypeShape EntityType="TestDB2Model.Member" Width="1.5" PointX="5.125" PointY="3.75" />
+        <EntityTypeShape EntityType="TestDB2Model.Project" Width="1.5" PointX="5.125" PointY="0.75" />
+        <EntityTypeShape EntityType="TestDB2Model.ProjectStatu" Width="1.5" PointX="7.125" PointY="0.75" />
+        <EntityTypeShape EntityType="TestDB2Model.Supervisor" Width="1.5" PointX="3" PointY="3.5" />
         <AssociationConnector Association="TestDB2Model.FK_Project_ProjectStatus" />
         <AssociationConnector Association="TestDB2Model.FK_Project_Supervisor" />
+        <AssociationConnector Association="TestDB2Model.FK_Supervisor_Department" />
         <AssociationConnector Association="TestDB2Model.ProjectMember" />
       </Diagram>
     </edmx:Diagrams>

@@ -13,11 +13,11 @@ namespace Test_Application.Controllers
     {
         // GET: ProjectDetails
 
-        TestDB2Entities db = new TestDB2Entities();  // Instantiates the database context to access EF data.
+        TestDB2Entities db = new TestDB2Entities();  
 
-        public static Mapper GetMapper()             // Static method to configure and return an AutoMapper instance.
+        public static Mapper GetMapper()             
         {
-            var config = new MapperConfiguration(cfg =>   // Defines the mapping configuration.
+            var config = new MapperConfiguration(cfg =>   
             {
                 cfg.CreateMap<SupervisorDTO, Supervisor>().ReverseMap();
                 cfg.CreateMap<MemberDTO, Member>().ReverseMap();
@@ -25,8 +25,8 @@ namespace Test_Application.Controllers
                 cfg.CreateMap<Project, ProjectDetailsDTO>().ReverseMap();
             });
 
-            var mapper = new Mapper(config);     // Creates a mapper instance using the above config.
-            return mapper;                       // Returns the mapper for use in other methods.
+            var mapper = new Mapper(config);     
+            return mapper;                       
         }
         public ActionResult Index()
         {

@@ -22,8 +22,10 @@ namespace Test_Application.EF
     
         public int SupervisorID { get; set; }
         public string SName { get; set; }
+        public Nullable<int> DepartmentID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Project> Projects { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

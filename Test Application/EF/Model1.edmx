@@ -40,15 +40,13 @@
           <Property Name="SupervisorID" Type="int" Nullable="false" />
           <Property Name="StatusID" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ProjectMember">
           <Key>
-            <PropertyRef Name="ProjectID" />
             <PropertyRef Name="MemberID" />
+            <PropertyRef Name="ProjectID" />
           </Key>
-          <Property Name="ProjectID" Type="int" Nullable="false" />
           <Property Name="MemberID" Type="int" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ProjectStatus">
           <Key>
@@ -66,6 +64,7 @@ warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary
           <Property Name="Cgpa" Type="float" Nullable="false" />
           <Property Name="Dob" Type="datetime" Nullable="false" />
           <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="MemberID" Type="int" />
         </EntityType>
         <EntityType Name="Supervisor">
           <Key>
@@ -73,6 +72,7 @@ warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary
           </Key>
           <Property Name="SupervisorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" />
         </EntityType>
         <Association Name="FK_Project_ProjectStatus">
           <End Role="ProjectStatus" Type="Self.ProjectStatus" Multiplicity="1" />
@@ -134,20 +134,27 @@ warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Supervisor_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Supervisor" Type="Self.Supervisor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Supervisor">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="TestDB2ModelStoreContainer">
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectMember" EntityType="Self.ProjectMember" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProjectStatus" EntityType="Self.ProjectStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supervisor" EntityType="Self.Supervisor" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ProjectMember" EntityType="Self.ProjectMember" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ProjectMember].[ProjectID] AS [ProjectID], 
-    [ProjectMember].[MemberID] AS [MemberID]
-    FROM [dbo].[ProjectMember] AS [ProjectMember]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Project_ProjectStatus" Association="Self.FK_Project_ProjectStatus">
             <End Role="ProjectStatus" EntitySet="ProjectStatus" />
             <End Role="Project" EntitySet="Project" />
@@ -168,6 +175,10 @@ warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary
             <End Role="Department" EntitySet="Department" />
             <End Role="Student" EntitySet="Student" />
           </AssociationSet>
+          <AssociationSet Name="FK_Supervisor_Department" Association="Self.FK_Supervisor_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Supervisor" EntitySet="Supervisor" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -180,6 +191,7 @@ warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary
           <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Students" Relationship="Self.FK_Student_Department" FromRole="Department" ToRole="Student" />
+          <NavigationProperty Name="Supervisors" Relationship="TestDB2Model.FK_Supervisor_Department" FromRole="Department" ToRole="Supervisor" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -201,6 +213,7 @@ warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary
           <Property Name="Dob" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DepartmentID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Student_Department" FromRole="Student" ToRole="Department" />
+          <Property Name="MemberID" Type="Int32" />
         </EntityType>
         <Association Name="FK_Student_Department">
           <End Role="Department" Type="Self.Department" Multiplicity="1" />
@@ -233,6 +246,10 @@ warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary
           <AssociationSet Name="FK_Project_Supervisor" Association="TestDB2Model.FK_Project_Supervisor">
             <End Role="Supervisor" EntitySet="Supervisors" />
             <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supervisor_Department" Association="TestDB2Model.FK_Supervisor_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Supervisor" EntitySet="Supervisors" />
           </AssociationSet>
           <AssociationSet Name="ProjectMember" Association="TestDB2Model.ProjectMember">
             <End Role="Member" EntitySet="Members" />
@@ -276,6 +293,8 @@ warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary
           <Property Name="SupervisorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Projects" Relationship="TestDB2Model.FK_Project_Supervisor" FromRole="Supervisor" ToRole="Project" />
+          <Property Name="DepartmentID" Type="Int32" />
+          <NavigationProperty Name="Department" Relationship="TestDB2Model.FK_Supervisor_Department" FromRole="Supervisor" ToRole="Department" />
         </EntityType>
         <Association Name="FK_Project_ProjectStatus">
           <End Type="TestDB2Model.ProjectStatu" Role="ProjectStatu" Multiplicity="1" />
@@ -298,6 +317,18 @@ warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary
             </Principal>
             <Dependent Role="Project">
               <PropertyRef Name="SupervisorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supervisor_Department">
+          <End Type="TestDB2Model.Department" Role="Department" Multiplicity="0..1" />
+          <End Type="TestDB2Model.Supervisor" Role="Supervisor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Supervisor">
+              <PropertyRef Name="DepartmentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -333,6 +364,7 @@ warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary
           <EntitySetMapping Name="Students">
             <EntityTypeMapping TypeName="TestDB2Model.Student">
               <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Cgpa" ColumnName="Cgpa" />
@@ -372,6 +404,7 @@ warning 6002: The table/view 'TestDB2.dbo.ProjectMember' does not have a primary
           <EntitySetMapping Name="Supervisors">
             <EntityTypeMapping TypeName="TestDB2Model.Supervisor">
               <MappingFragment StoreEntitySet="Supervisor">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
                 <ScalarProperty Name="SName" ColumnName="SName" />
                 <ScalarProperty Name="SupervisorID" ColumnName="SupervisorID" />
               </MappingFragment>

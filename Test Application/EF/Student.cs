@@ -19,6 +19,7 @@ namespace Test_Application.EF
         public double Cgpa { get; set; }
         public System.DateTime Dob { get; set; }
         public int DepartmentID { get; set; }
+        public Nullable<int> MemberID { get; set; }
     
         public virtual Department Department { get; set; }
     }

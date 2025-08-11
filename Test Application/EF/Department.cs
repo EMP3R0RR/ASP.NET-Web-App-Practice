@@ -18,6 +18,7 @@ namespace Test_Application.EF
         public Department()
         {
             this.Students = new HashSet<Student>();
+            this.Supervisors = new HashSet<Supervisor>();
         }
     
         public int DepartmentID { get; set; }
@@ -25,5 +26,7 @@ namespace Test_Application.EF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student> Students { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Supervisor> Supervisors { get; set; }
     }
 }
