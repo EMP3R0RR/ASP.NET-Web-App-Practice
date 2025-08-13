@@ -17,6 +17,10 @@
         <AssociationConnector Association="TestDB2Model.FK_Project_Supervisor" />
         <AssociationConnector Association="TestDB2Model.FK_Supervisor_Department" />
         <AssociationConnector Association="TestDB2Model.ProjectMember" />
+        <EntityTypeShape EntityType="TestDB2Model.User" Width="1.5" PointX="2.875" PointY="5.75" />
+        <EntityTypeShape EntityType="TestDB2Model.UserType" Width="1.5" PointX="0.75" PointY="5.75" />
+        <AssociationConnector Association="TestDB2Model.FK_Student_User" />
+        <AssociationConnector Association="TestDB2Model.FK_User_UserType" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
