@@ -19,6 +19,7 @@ namespace Test_Application.EF
         public string Email { get; set; }
         public string PasswordHashed { get; set; }
         public int UserTypeID { get; set; }
+        
     
         public virtual Student Student { get; set; }
         public virtual UserType UserType { get; set; }

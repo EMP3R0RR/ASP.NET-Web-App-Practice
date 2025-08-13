@@ -26,12 +26,12 @@ namespace Test_Application.Controllers
             //Password = GetMd5Hash(Password);
             var user = (from u in db.Users
                         where u.UserName.Equals(UserName) &&
-                        u.PasswordHashed.Equals(Password) &&
+                        u.Password.Equals(Password) && //change the name of the pass field in db
                         u.Email.Equals(Email)
                         select u).SingleOrDefault();
-            if (user != null && user.UserType.Equals("Student"))
+            if (user != null && user.UserTypeID == 1)
             {
-                user.PasswordHashed = null;
+                user.Password = null;
                 Session["User"] = user;
                 if (ReturnUrl != null)
                 {
