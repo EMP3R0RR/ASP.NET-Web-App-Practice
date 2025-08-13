@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="664943f127cb4ff8a870c6915e8ed87c" Name="Diagram1">
-        <EntityTypeShape EntityType="TestDB2Model.Department" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TestDB2Model.Product" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TestDB2Model.Student" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="07e35c2b28f24195aef896595a3b30b1" Name="Diagram1">
+        <EntityTypeShape EntityType="TestDB2Model.Department" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDB2Model.Member" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDB2Model.Product" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDB2Model.Project" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDB2Model.ProjectStatu" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDB2Model.Student" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDB2Model.Supervisor" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDB2Model.User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDB2Model.UserType" Width="1.5" PointX="1.5" PointY="10.625" IsExpanded="true" />
         <AssociationConnector Association="TestDB2Model.FK_Student_Department" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="TestDB2Model.Member" Width="1.5" PointX="5.125" PointY="3.75" />
-        <EntityTypeShape EntityType="TestDB2Model.Project" Width="1.5" PointX="5.125" PointY="0.75" />
-        <EntityTypeShape EntityType="TestDB2Model.ProjectStatu" Width="1.5" PointX="7.125" PointY="0.75" />
-        <EntityTypeShape EntityType="TestDB2Model.Supervisor" Width="1.5" PointX="3" PointY="3.5" />
-        <AssociationConnector Association="TestDB2Model.FK_Project_ProjectStatus" />
-        <AssociationConnector Association="TestDB2Model.FK_Project_Supervisor" />
-        <AssociationConnector Association="TestDB2Model.FK_Supervisor_Department" />
-        <AssociationConnector Association="TestDB2Model.ProjectMember" />
-        <EntityTypeShape EntityType="TestDB2Model.User" Width="1.5" PointX="2.875" PointY="5.75" />
-        <EntityTypeShape EntityType="TestDB2Model.UserType" Width="1.5" PointX="0.75" PointY="5.75" />
-        <AssociationConnector Association="TestDB2Model.FK_Student_User" />
-        <AssociationConnector Association="TestDB2Model.FK_User_UserType" />
+        <AssociationConnector Association="TestDB2Model.FK_Supervisor_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDB2Model.FK_Project_ProjectStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDB2Model.FK_Project_Supervisor" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDB2Model.FK_Student_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDB2Model.FK_User_UserType" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDB2Model.ProjectMember" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
